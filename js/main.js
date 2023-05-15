@@ -115,3 +115,33 @@
     
 })(jQuery);
 
+// Set the end date and time.
+var endDate = new Date("2023-08-15T16:00:00-05:00");
+
+// Start the countdown timer.
+var timer = setInterval(function() {
+    // Get the current date and time.
+    var now = new Date();
+
+    // Calculate the difference between the end date and time and the current date and time in seconds.
+    var difference = (endDate - now) / 1000;
+
+    // If the countdown is complete, stop the timer and display the message.
+    if (difference <= 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "<div class='btn btn-outline-primary font-weight-bold m-1 py-2 px-4'>La fiesta acaba de empezar!</div>";
+        return;
+    }
+
+    // Calculate the number of days, hours, minutes, and seconds remaining.
+    var days = Math.floor(difference / (60 * 60 * 24));
+    var hours = Math.floor((difference % (60 * 60 * 24)) / (60 * 60));
+    var minutes = Math.floor((difference % (60 * 60)) / (60));
+    var seconds = Math.floor((difference % (60)) / 1);
+
+    // Update the countdown display.
+    document.getElementById("days").innerHTML = `Días: <br>${days}`;
+    document.getElementById("hours").innerHTML = `Horas: <br>${hours}`;
+    document.getElementById("minutes").innerHTML = `Minutos: <br>${minutes}`;
+    document.getElementById("seconds").innerHTML = `Segundos: <br>${seconds}`;
+}, 1000);
