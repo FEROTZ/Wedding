@@ -97,9 +97,10 @@ body {
 
 .logo {
   fill: none;
-  stroke-dasharray: 20px;
-  stroke: black;
-  animation: load 15s infinite linear;
+  stroke-width: .13px;
+  stroke-dasharray: 15px;
+  stroke: #023373;
+  animation: load 20s infinite linear;
 }
 
 @keyframes load {
