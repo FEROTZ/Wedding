@@ -69,7 +69,9 @@
                                     <h3 class="text-uppercase font-weight-normal text-white m-0"
                                         style="letter-spacing: 2px;">Esmeralda Naomy</h3>
                                 </div>
-
+                                <button type="button" class="btn-play mx-auto" onclick="startAudio()">
+                                    <span></span>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -303,9 +305,6 @@
             </div>
         </div>
         <!-- RSVP End -->
-
-    
-
         <!-- Gallery Start -->
         <div class="container-fluid bg-gallery" id="gallery" style="padding: 120px 0; margin: 90px 0;">
             <div class="section-title position-relative text-center" style="margin-bottom: 120px;">
@@ -509,10 +508,24 @@
         */
     </script>
     <!-- Audio -->
-    <audio autoplay loop id="audio">
+    <audio loop id="audio" volume="0.1">
         <source src="./audio/0jXTBAGv9ZQ_128.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
+    <script>
+        let audio = document.getElementById("audio");
+        // Ajusta el volumen a 0.5 (50%)
+        //audio.volume = 0.3;
+        function startAudio() {
+            if (audio.paused) {
+                audio.volume = 0.3;
+                audio.play();
+            } else {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+          }
+    </script>
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
     
@@ -521,8 +534,8 @@
             document.body.classList.add('loaded');
             var loader = document.querySelector('.loader-container');
             loader.classList.add('hidden');
-            var audio = document.getElementById('audio'); // Obtener el elemento de audio por su ID
-            audio.play(); // Reproducir el audio automáticamente
+            let audio = document.getElementById('audio'); // Obtener el elemento de audio por su ID
+            audio.volume = 0.3;
 
         });
     </script>
