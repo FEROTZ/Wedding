@@ -116,7 +116,7 @@
 })(jQuery);
 
 // Set the end date and time.
-var endDate = new Date("2023-08-15T16:00:00-05:00");
+var endDate = new Date("2023-07-08T16:00:00-05:00");
 
 // Start the countdown timer.
 var timer = setInterval(function() {
@@ -145,3 +145,18 @@ var timer = setInterval(function() {
     document.getElementById("minutes").innerHTML = `Minutos: <br>${minutes}`;
     document.getElementById("seconds").innerHTML = `Segundos: <br>${seconds}`;
 }, 1000);
+
+var WHATSAPP_NUMBER = 5537252449;
+        // ?text=Ah%C3%AD%20estar%C3%A9%2C%20ap%C3%A1rtame%20%5Bn%C3%BAmero%20de%20personas%5D%20asientos
+        const MESSAGE = encodeURIComponent("¡Hola, ahí estaré!, apártame [número de personas] asientos")
+
+        function myWhatsappFunction() {
+        var md = new MobileDetect(window.navigator.userAgent);
+        if (md.mobile()) {
+            // mobile link
+            document.getElementById("whatsapp-btn").href = `https://wa.me/${WHATSAPP_NUMBER}/?text=${MESSAGE}`;
+        } else {
+            // desktop link
+            document.getElementById("whatsapp-btn").href = `https://web.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${MESSAGE}`;
+        }
+        };
