@@ -148,7 +148,7 @@ var timer = setInterval(function() {
 
 var WHATSAPP_NUMBER = 5537252449;
         // ?text=Ah%C3%AD%20estar%C3%A9%2C%20ap%C3%A1rtame%20%5Bn%C3%BAmero%20de%20personas%5D%20asientos
-        const MESSAGE = encodeURIComponent("¡Hola!,confirmo mi asistencia")
+        const MESSAGE = encodeURIComponent("¡Hola!,confirmo mi asistencia.")
 
         function myWhatsappFunction() {
         var md = new MobileDetect(window.navigator.userAgent);
